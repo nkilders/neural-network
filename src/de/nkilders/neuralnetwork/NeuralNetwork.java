@@ -2,6 +2,9 @@ package de.nkilders.neuralnetwork;
 
 import java.io.*;
 
+/**
+ * @author Noah Kilders
+ */
 public class NeuralNetwork implements Serializable {
     public final int[] SIZE;
     public final int LAST_LAYER;
@@ -32,8 +35,9 @@ public class NeuralNetwork implements Serializable {
     }
 
     public double[] propagate(final double[] input) {
-        if (input.length != SIZE[0])
+        if (input.length != SIZE[0]) {
             throw new IllegalArgumentException("You must enter " + SIZE[0] + " input value(s)!");
+        }
 
         for (int inNeuron = 0; inNeuron < SIZE[0]; inNeuron++) {
             NET[0][inNeuron].output = input[inNeuron];

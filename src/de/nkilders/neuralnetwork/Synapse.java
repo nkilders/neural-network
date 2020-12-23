@@ -2,6 +2,9 @@ package de.nkilders.neuralnetwork;
 
 import java.io.Serializable;
 
+/**
+ * @author Noah Kilders
+ */
 public class Synapse implements Serializable {
     public Neuron inNeuron;
     public Neuron outNeuron;

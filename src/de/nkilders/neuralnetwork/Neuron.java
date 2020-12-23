@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Noah Kilders
+ */
 public class Neuron implements Serializable {
     public double output;
     public double bias;
