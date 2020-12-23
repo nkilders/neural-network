@@ -1,4 +1,4 @@
-package de.noah.neuralnetwork;
+package de.nkilders.neuralnetwork;
 
 import java.io.Serializable;
 import java.util.ArrayList;
