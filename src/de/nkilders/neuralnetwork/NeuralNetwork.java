@@ -6,7 +6,13 @@ import java.io.*;
  * @author Noah Kilders
  */
 public class NeuralNetwork implements Serializable {
+    /**
+     * How many neurons are in each layer
+     */
     public final int[] SIZE;
+    /**
+     * Last layer's index in {@link #SIZE}
+     */
     public final int LAST_LAYER;
     private final Neuron[][] NET;
 
