@@ -10,6 +10,14 @@ public class NeuralNetwork implements Serializable {
     public final int LAST_LAYER;
     private final Neuron[][] NET;
 
+    /**
+     * @param size specifies the number of neurons per layer<br>
+     *             e.g. {@code new NeuralNetwork(2, 2, 3, 1)}<br>
+     *             creates a network with two neurons on the input-layer,<br>
+     *             two on the first hidden-layer,<br>
+     *             three on the second hidden layer,<br>
+     *             and one on the output-layer.<br>
+     */
     public NeuralNetwork(int... size) {
         this.SIZE = size;
         this.LAST_LAYER = SIZE.length - 1;
@@ -34,6 +42,12 @@ public class NeuralNetwork implements Serializable {
         }
     }
 
+    /**
+     * Calculates the net's output-values for the given input-values
+     *
+     * @param input input-values which are given to the net
+     * @return the net's outputted values
+     */
     public double[] propagate(final double[] input) {
         if (input.length != SIZE[0]) {
             throw new IllegalArgumentException("You must enter " + SIZE[0] + " input value(s)!");
@@ -66,6 +80,15 @@ public class NeuralNetwork implements Serializable {
         return output;
     }
 
+    /**
+     * Trains the network by a given set of input- and output-values
+     *
+     * @param input input-values which are given to the net
+     * @param targets target-values, the net should produce for the given input-values<br>
+     *                ({@code targets[n]} are the target-values for {@code input[n]})
+     * @param iterations how many training-iterations to be performed
+     * @param learningRate factor, how strong connection-weights will be adjusted
+     */
     public void train(double[][] input, double[][] targets, int iterations, double learningRate) {
         for (int i = 0; i < iterations; i++) {
             final int rand = (int) (Math.random() * input.length);
