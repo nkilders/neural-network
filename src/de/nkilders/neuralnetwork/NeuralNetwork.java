@@ -48,7 +48,7 @@ public class NeuralNetwork implements Serializable {
      * @param input input-values which are given to the net
      * @return the net's outputted values
      */
-    public double[] propagate(final double[] input) {
+    public double[] propagate(double... input) {
         if (input.length != SIZE[0]) {
             throw new IllegalArgumentException("You must enter " + SIZE[0] + " input value(s)!");
         }
